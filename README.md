@@ -90,6 +90,8 @@ This project was inspired by:
 git clone https://github.com/your-username/mental-health-chatbot.git
 pip install -r requirements.txt
 python chatbot.py
+
+#### Example conversation with the Mental Health Chatbot
 Welcome to the Mental Health Chatbot. Type 'exit' to end the conversation.
 You: I've been feeling really stressed lately.
 Chatbot: I'm really sorry to hear that you're feeling this way. Let's talk more about it.
