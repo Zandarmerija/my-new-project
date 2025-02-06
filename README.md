@@ -4,7 +4,7 @@ Building AI course project
 
 ## Final Project for the Building AI Course
 
-### Summary
+## Summary
 An AI-powered chatbot designed to provide mental health support by offering immediate, empathetic responses and guiding users to appropriate resources. The chatbot uses natural language processing to understand user emotions and provide tailored advice.
 
 ---
@@ -53,7 +53,7 @@ python chatbot.py
 
 Type your message and receive an AI-generated response. To exit, type `exit`.
 
-### Example conversation with the Mental Health Chatbot
+## Example conversation with the Mental Health Chatbot
 Welcome to the Mental Health Chatbot. Type 'exit' to end the conversation.
 You: I've been feeling really stressed lately.
 Chatbot: I'm really sorry to hear that you're feeling this way. Let's talk more about it.
