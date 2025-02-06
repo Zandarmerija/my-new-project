@@ -2,109 +2,91 @@
 Building AI course project
 # AI-Powered Mental Health Chatbot
 
-Final project for the Building AI course
+## Final Project for the Building AI Course
 
-## Summary
+### Summary
 An AI-powered chatbot designed to provide mental health support by offering immediate, empathetic responses and guiding users to appropriate resources. The chatbot uses natural language processing to understand user emotions and provide tailored advice.
-
-## Features
-- **Empathetic Responses**: The chatbot provides supportive and understanding responses.
-- **Sentiment Analysis**: Detects the user's emotional state to tailor responses.
-- **Resource Suggestions**: Offers links to mental health resources and hotlines.
-- **Simple Interface**: Easy-to-use command-line interface.
-
-## How to Use
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/mental-health-chatbot.git
-   pip install -r requirements.txt
-python chatbot.py
 
 ---
 
-### 2. `requirements.txt`
+## Background
+Mental health issues affect millions of people worldwide, yet many struggle to access immediate help due to stigma, lack of resources, or long waiting times for professional support. AI-powered chatbots can help bridge this gap by offering real-time emotional support and resource recommendations.
 
-```plaintext
-transformers==4.26.0
-torch==1.13.0
-nltk==3.7
-import torch
-from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
-from nltk.sentiment import SentimentIntensityAnalyzer
-import nltk
-import random
+The motivation behind this project is to leverage AI to provide a non-judgmental, accessible, and supportive platform for individuals who need someone to talk to. While AI cannot replace professional mental health care, it can serve as a first step in helping users navigate their emotions and seek appropriate help when necessary.
 
-# Download NLTK data for sentiment analysis
-nltk.download('vader_lexicon')
+---
 
-# Load a pre-trained conversational model (e.g., DialoGPT)
-model_name = "microsoft/DialoGPT-medium"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name)
+## Data and AI Techniques
+This chatbot uses:
 
-# Initialize a chatbot pipeline
-chatbot = pipeline("text-generation", model=model, tokenizer=tokenizer)
+- **Pre-trained conversational AI model:** DialoGPT (Microsoft)
+- **Sentiment Analysis:** VADER (Valence Aware Dictionary and sEntiment Reasoner)
+- **Natural Language Processing (NLP):** Transformers library by Hugging Face
+- **Resource Matching:** A database of mental health resources, matched based on detected sentiment
 
-# Initialize sentiment analyzer
-sia = SentimentIntensityAnalyzer()
+The chatbot analyzes user input for emotional tone and generates responses accordingly. If a user expresses negative emotions, the bot provides empathetic messages and suggests helpful mental health resources.
 
-# Load mental health resources
-def load_resources():
-    with open("resources/mental_health_resources.txt", "r") as file:
-        return file.readlines()
+---
 
-resources = load_resources()
+## How is it Used?
+Users interact with the chatbot via a simple command-line interface. The chatbot is intended for anyone experiencing stress, anxiety, or needing emotional support. The main users include:
 
-# Define a function to simulate a mental health chatbot
-def mental_health_chatbot():
-    print("Welcome to the Mental Health Chatbot. Type 'exit' to end the conversation.")
-    chat_history = []
+- Individuals looking for emotional support
+- People needing mental health resources
+- Those who feel uncomfortable reaching out to others but still want to talk
 
-    while True:
-        user_input = input("You: ")
-        if user_input.lower() == "exit":
-            print("Chatbot: Take care of yourself. Remember, you're not alone. Goodbye!")
-            break
+### Instructions:
+#### Clone the repository:
+```sh
+git clone https://github.com/your-username/mental-health-chatbot.git
+```
 
-        # Analyze sentiment of the user input
-        sentiment = sia.polarity_scores(user_input)
-        if sentiment['compound'] < -0.5:
-            print("Chatbot: I'm really sorry to hear that you're feeling this way. Let's talk more about it.")
-        elif sentiment['compound'] > 0.5:
-            print("Chatbot: I'm glad to hear that you're feeling positive! How can I assist you further?")
-        else:
-            print("Chatbot: I'm here to listen. How can I help you today?")
+#### Install dependencies:
+```sh
+pip install -r requirements.txt
+```
 
-        # Generate a response using the chatbot model
-        response = chatbot(user_input, max_length=50, pad_token_id=tokenizer.eos_token_id)
-        bot_response = response[0]['generated_text']
+#### Run the chatbot:
+```sh
+python chatbot.py
+```
 
-        # Add some empathetic phrases to make the chatbot more supportive
-        supportive_phrases = [
-            "I'm here for you.",
-            "That sounds tough. How can I help?",
-            "You're not alone in this.",
-            "It's okay to feel this way.",
-            "Let's talk more about it."
-        ]
-        bot_response = bot_response + " " + random.choice(supportive_phrases)
+Type your message and receive an AI-generated response. To exit, type `exit`.
 
-        print(f"Chatbot: {bot_response}")
+---
 
-        # Suggest a resource if the sentiment is negative
-        if sentiment['compound'] < -0.5:
-            print(f"Chatbot: Here's a resource that might help: {random.choice(resources)}")
+## Challenges
+- **Not a Replacement for Professional Help:** The chatbot cannot diagnose or treat mental illnesses.
+- **Bias in AI Models:** AI models may generate responses that are not always appropriate due to training data limitations.
+- **Privacy Concerns:** Users should be aware that their interactions are not stored, but AI models process input text.
+- **Understanding Complex Emotions:** AI struggles to fully comprehend deep emotional nuances and may generate generic responses.
 
-        chat_history.append((user_input, bot_response))
+---
 
-# Run the chatbot
-if __name__ == "__main__":
-    mental_health_chatbot()
-National Suicide Prevention Lifeline: 1-800-273-TALK (8255)
-Crisis Text Line: Text HOME to 741741
-BetterHelp Online Therapy: https://www.betterhelp.com
-7 Cups of Tea: https://www.7cups.com
-Mindfulness and Meditation Resources: https://www.headspace.com
+## What Next?
+To improve the chatbot, future work could include:
+
+- Expanding language support beyond English.
+- Improving sentiment analysis for better emotional detection.
+- Integrating voice input for accessibility.
+- Developing a web-based or mobile interface for a smoother user experience.
+- Connecting users with real mental health professionals for more serious cases.
+
+---
+
+## Acknowledgments
+This project was inspired by:
+
+- **Microsoft DialoGPT**
+- **NLTK Sentiment Analysis**
+- **Open-source mental health chatbots and online resources**
+
+### Mental health resources used:
+- **National Suicide Prevention Lifeline:** 1-800-273-TALK (8255)
+- **Crisis Text Line:** Text HOME to 741741
+- **BetterHelp Online Therapy:** [betterhelp.com](https://www.betterhelp.com)
+- **7 Cups of Tea:** [7cups.com](https://www.7cups.com)
+- **Mindfulness and Meditation:** [headspace.com](https://www.headspace.com)
 git clone https://github.com/your-username/mental-health-chatbot.git
 pip install -r requirements.txt
 python chatbot.py
