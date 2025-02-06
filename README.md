@@ -2,10 +2,10 @@
 Building AI course project
 # AI-Powered Mental Health Chatbot
 
-## Final Project for the Building AI Course
-
 ## Summary
 An AI-powered chatbot designed to provide mental health support by offering immediate, empathetic responses and guiding users to appropriate resources. The chatbot uses natural language processing to understand user emotions and provide tailored advice.
+
+## Final Project for the Building AI Course
 
 ---
 
