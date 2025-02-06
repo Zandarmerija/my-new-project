@@ -53,6 +53,17 @@ python chatbot.py
 
 Type your message and receive an AI-generated response. To exit, type `exit`.
 
+### Example conversation with the Mental Health Chatbot
+Welcome to the Mental Health Chatbot. Type 'exit' to end the conversation.
+You: I've been feeling really stressed lately.
+Chatbot: I'm really sorry to hear that you're feeling this way. Let's talk more about it.
+Chatbot: I'm here for you. It sounds like you're going through a tough time. How can I help?
+Chatbot: Here's a resource that might help: National Suicide Prevention Lifeline: 1-800-273-TALK (8255)
+You: I don't know what to do.
+Chatbot: That sounds tough. How can I help? Sometimes talking about it can help. Let's talk more about it.
+You: exit
+Chatbot: Take care of yourself. Remember, you're not alone. Goodbye!
+
 ---
 
 ## Challenges
@@ -91,13 +102,3 @@ git clone https://github.com/your-username/mental-health-chatbot.git
 pip install -r requirements.txt
 python chatbot.py
 
-#### Example conversation with the Mental Health Chatbot
-Welcome to the Mental Health Chatbot. Type 'exit' to end the conversation.
-You: I've been feeling really stressed lately.
-Chatbot: I'm really sorry to hear that you're feeling this way. Let's talk more about it.
-Chatbot: I'm here for you. It sounds like you're going through a tough time. How can I help?
-Chatbot: Here's a resource that might help: National Suicide Prevention Lifeline: 1-800-273-TALK (8255)
-You: I don't know what to do.
-Chatbot: That sounds tough. How can I help? Sometimes talking about it can help. Let's talk more about it.
-You: exit
-Chatbot: Take care of yourself. Remember, you're not alone. Goodbye!
